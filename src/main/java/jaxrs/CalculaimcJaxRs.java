@@ -11,7 +11,7 @@ public class CalculaimcJaxRs {
 	@GET
 	@Path("/calculaimc")
 	@Produces("application/json")
-	public Calcularimc calcular(@QueryParam("pesoidade") Float peso, Float altura String sexo) {
+	public Calculaimc calcular(@QueryParam("peso,altura,sexo") Float peso, Float altura, String sexo) {
 	  Calculaimc calculaimc = new Calculaimc(peso,altura,sexo);
 	  calculaimc.calculaIMC(peso, altura, sexo);
 	  return calculaimc;
