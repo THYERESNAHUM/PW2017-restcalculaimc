@@ -9,7 +9,7 @@ import javax.ws.rs.QueryParam;
 public class CalculaimcJaxRs {
 
 	@GET
-	@Path("/calculaimc")
+	@Path("/restcalculaimc")
 	@Produces("application/json")
 	public Calculaimc calcular(@QueryParam("peso,altura,sexo") Float peso, Float altura, String sexo) {
 	  Calculaimc calculaimc = new Calculaimc(peso,altura,sexo);
