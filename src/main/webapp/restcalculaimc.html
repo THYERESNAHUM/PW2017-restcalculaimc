@@ -25,7 +25,7 @@ form[role=moldura] {
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<br>
-				<form name="calculaIMC" role="moldura" class="form-horizontal" action="restcalculaimc" method="get">
+				<form name="calculaIMC" role="moldura" class="form-horizontal">
 				<fieldset>
 					<div align="center">
 							<h3>Calcula IMC - Servlet</h3>
@@ -87,10 +87,9 @@ form[role=moldura] {
         function calcular() {
             $.ajax({
                 dataType: "json",
-                url: "http://localhost:9090/restcalculaimc/restcalculaimc?peso=" +
-                		document.forms["calculaIMC"].elements["peso"].value + "altura=" + 
-                		document.forms["calculaIMC"].elements["altura"].value + "sexo=" + 
-                		document.forms["calculaIMC"].elements["sexo"].value
+                url: "http://localhost:9090/restcalculaimc/restcalculaimc?altura=" + document.forms["calculaIMC"].elements["altura"].value
+		    								   + "&peso=" + document.forms["calculaIMC"].elements["peso"].value
+		    								   + "&peso=" + document.forms["calculaIMC"].elements["sexo"].value
             }).then(function(calcula) {
                 alert(calcula.resultado + " em (" + calcula.resultado + ")");
             });        }
